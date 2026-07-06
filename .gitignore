@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+structured_data_regressor/
+*.keras
+.DS_Store
+
+# Exported charts are large generated artifacts and are published directly
+# on gimeno.tech instead of being duplicated in the repo.
+charts/
