@@ -77,6 +77,23 @@ result = pipeline.run_pipeline(
 - Recommendation: treat these outputs as scenario bands for planning rather than a single
   point forecast, and re-run the pipeline regularly as new daily data arrives.
 
+## Pareto analysis
+
+Does price volatility concentrate in a small number of high-movement days, the way the
+80/20 rule would predict? Days are ranked by absolute day-over-day price change and plotted
+against their cumulative share of total movement:
+
+![Pareto analysis of price movement by day](assets/pareto_by_day.svg)
+
+**Moderate concentration, not a strict 80/20 split.** The top 20% of trading days (242 of
+1,208) account for **54.2%** of the total cumulative price movement over 2023-2026, and it
+takes **44.4%** of all days to reach 80% of total movement. That's meaningfully more
+concentrated than a uniform distribution (where 20% of days would account for only 20% of
+movement), but it falls short of a textbook 80/20 pattern. A relatively compact set of
+high-volatility days drives a disproportionate share of total price movement — these are the
+periods where forecast error is likeliest to spike, and where re-forecasting attention is
+most valuable, rather than treating every day as equally unpredictable.
+
 ## Notes
 
 This is a from-scratch analytics/portfolio project — it is not a general-purpose
